@@ -41,17 +41,46 @@ namespace uveghazrendszer
 			{
 				this.noveny = noveny;
 				this.egyedSzam = egyedSzam;
+				if (this.egyedSzam > noveny.OptimalisSuruseg)
+				{
+					this.noveny.EgeszsegiAllapot -= 2;
+				}
 				return true;
 			}
 			else if(this.Noveny == noveny)
 			{
 				this.egyedSzam += egyedSzam;
+				if(this.egyedSzam > noveny.OptimalisSuruseg)
+				{
+					this.noveny.EgeszsegiAllapot -= 2;
+				}
 				return true;
 			}
 			else { return false; }
 
+
+
 		}
 
-		
+		public void Noveles(int mennyiseg)
+		{
+			this.Beultet(this.noveny, mennyiseg);
+		}
+		public void Csokkentes(int mennyiseg)
+		{
+			this.egyedSzam -= mennyiseg;
+			if (this.egyedSzam <= 0)
+			{
+				this.egyedSzam = 0;
+				this.noveny = null;
+			}
+		}
+		public void Urit()
+		{
+			this.noveny = null;
+		}
+
+
+
 	}
 }
