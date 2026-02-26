@@ -8,5 +8,6 @@ namespace uveghazrendszer
 {
 	internal class Szenzor
 	{
+
 	}
 }

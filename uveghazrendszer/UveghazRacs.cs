@@ -46,7 +46,7 @@ namespace uveghazrendszer
 		
 		public void Kiiratas()
 		{
-			Console.WriteLine("\n---------------------------------");
+			Console.WriteLine("\n-------------------------------------");
 			for (int i = 0; i < this.kert.GetLength(0); i++)
 			{
 				Console.Write("|");
@@ -54,14 +54,14 @@ namespace uveghazrendszer
 				{
 					if (this.kert[i, j].UresCella)
 					{
-						Console.Write($"  {"ÜRES"} |");
+						Console.Write($"  {"ÜRES"}  |");
 					}
 					else
 					{
-						Console.Write($"{kert[i, j].Noveny.Azonosito,3} {kert[i,j].Egyedszam}db|");
+						Console.Write($"{kert[i, j].Noveny.Azonosito,3} {kert[i,j].Egyedszam,2}db|");
 					}
 				}
-				Console.WriteLine("\n---------------------------------");
+				Console.WriteLine("\n-------------------------------------");
 			}
 			Console.WriteLine();
 		}
@@ -87,8 +87,21 @@ namespace uveghazrendszer
 			kert[x - 1, y - 1].Csokkentes(mennyiseg);
 			Console.WriteLine($"{x}-{y} ágyás növénye, a(z) {kert[x - 1, y - 1].Noveny.Nev}, egyedszám: {kert[x - 1, y - 1].Egyedszam}");
 
+		}
 
+		public void Urit(int x, int y)
+		{
+			kert[x - 1, y - 1].Urit();
+			Console.WriteLine($"{x}-{y} ágyás sikeresen ürtítve!");
+		}
 
+		public void Szomszedok(int x, int y) 
+		{
+			Console.Write($"{x}-{y} ágyás szomszédai:");
+			Console.Write($"F: {kert[x-2,y-1].Noveny},");
+			Console.Write($"B: {kert[x - 1, y - 2].Noveny},");
+			Console.Write($"J: {kert[x-1, y].Noveny}, ");
+			Console.Write($"A: {kert[x, y-1].Noveny}");
 		}
 	}
 }
