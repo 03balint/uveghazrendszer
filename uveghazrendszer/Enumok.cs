@@ -8,6 +8,7 @@ namespace uveghazrendszer
 {
 	enum Szerepkor{KERTESZ, TECHNIKUS, ADMIN}
 
+	
 
 
 	internal class Enumok

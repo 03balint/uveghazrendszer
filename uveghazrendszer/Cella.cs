@@ -56,9 +56,8 @@ namespace uveghazrendszer
 				}
 				return true;
 			}
-			else { return false; }
 
-
+			return false;
 
 		}
 
@@ -80,7 +79,10 @@ namespace uveghazrendszer
 			this.noveny = null;
 		}
 
-
+		public override string ToString()
+		{
+			return $"{this.noveny.Nev}, {this.egyedSzam} db állapot: {this.Noveny.EgeszsegiAllapot}";
+		}
 
 	}
 }
