@@ -12,13 +12,14 @@
 			NovenyFaj salata = new NovenyFaj("Saláta", 90, 10, 4);
 			NovenyFaj dinnye = new NovenyFaj("Dinnye", 120, 10, 3);
 			NovenyFaj eper = new NovenyFaj("Eper", 80, 10, 10);
-			//Cella cella = new Cella(new Pozicio(0, 0));			
-			//Console.WriteLine(cella.UresCella);
+            NovenyFaj krumpli = new NovenyFaj("Krumpli", 65, 10, 7);
+            //Cella cella = new Cella(new Pozicio(0, 0));			
+            //Console.WriteLine(cella.UresCella);
 
-			//cella.Beultet(n1, 5);
-			//Console.WriteLine(cella.UresCella);
+            //cella.Beultet(n1, 5);
+            //Console.WriteLine(cella.UresCella);
 
-			UveghazRacs uveghaz=new UveghazRacs(4);
+            UveghazRacs uveghaz=new UveghazRacs(4);
             uveghaz.Kiiratas();
             uveghaz.Telepit(1,1,paradicsom,4);
 			uveghaz.Telepit(4,2, salata, 10);
@@ -33,7 +34,8 @@
 			uveghaz.Kiiratas();
 
 			uveghaz.Telepit(3,3,dinnye,2);
-			uveghaz.Urit(3, 3);
+            uveghaz.Urit(3, 3);
+            //uveghaz.Telepit(3, 3, krumpli, 2);
 			uveghaz.Kiiratas();
 
 			uveghaz.Szomszedok(3, 2);

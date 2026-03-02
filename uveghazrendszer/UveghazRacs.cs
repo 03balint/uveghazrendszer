@@ -95,13 +95,62 @@ namespace uveghazrendszer
 			Console.WriteLine($"{x}-{y} ágyás sikeresen ürtítve!");
 		}
 
-		public void Szomszedok(int x, int y) 
-		{
-			Console.Write($"{x}-{y} ágyás szomszédai:");
-			Console.Write($"F: {kert[x-2,y-1].Noveny},");
-			Console.Write($"B: {kert[x - 1, y - 2].Noveny},");
-			Console.Write($"J: {kert[x-1, y].Noveny}, ");
-			Console.Write($"A: {kert[x, y-1].Noveny}");
-		}
-	}
+        public void Szomszedok(int x, int y)
+        {
+            string szomszedok = "";
+
+            if (x - 2 >= 0)
+            {
+                if (!kert[x - 2, y - 1].UresCella)
+                    szomszedok += kert[x - 2, y - 1].Noveny.Nev;
+                else
+                    szomszedok += "üres";
+            }
+            else
+            {
+                szomszedok += "nincs";
+            }
+            szomszedok += ", ";
+
+            if (y - 2 >= 0)
+            {
+                if (!kert[x - 1, y - 2].UresCella)
+                    szomszedok += kert[x - 1, y - 2].Noveny.Nev;
+                else
+                    szomszedok += "üres";
+            }
+            else
+            {
+                szomszedok += "nincs";
+            }
+            szomszedok += ", ";
+
+            if (y < kert.GetLength(1))
+            {
+                if (!kert[x - 1, y].UresCella)
+                    szomszedok += kert[x - 1, y].Noveny.Nev;
+                else
+                    szomszedok += "üres";
+            }
+            else
+            {
+                szomszedok += "nincs";
+            }
+            szomszedok += ", ";
+
+            if (x < kert.GetLength(0))
+            {
+                if (!kert[x, y - 1].UresCella)
+                    szomszedok += kert[x, y - 1].Noveny.Nev;
+                else
+                    szomszedok += "üres";
+            }
+            else
+            {
+                szomszedok += "nincs";
+            }
+
+            Console.WriteLine(szomszedok);
+        }
+    }
 }
